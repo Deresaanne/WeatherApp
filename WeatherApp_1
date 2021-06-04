@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: #1a64d6;
+        text-align: center;
+      }
+
+      button {
+        display: block;
+        margin: 30px auto;
+        padding: 15px 30px;
+        border: 1px solid #1a64d6;
+        background: #1a64d6;
+        color: white;
+        border-radius: 30px;
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        background: white;
+        color: #1a64d6;
+      }
+      ul {
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      li:hover {
+        background: #fffbef;
+      }
+      p {
+        text-align: center;
+      }
+      li:hover {
+        background: #fffbef;
+      }
+
+      h3 {
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      .temperature {
+        text-align: center;
+        font-size: 30px;
+      }
+      .lower {
+        font-weight: bolder;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      🌤
+      <br />
+      Currently 21&deg; Tokyo
+    </h1>
+    <div class="temperature">13&deg;<span class="lower">/23&deg;</span></div>
+    <div class="list">
+      <ul>
+        <li>
+          <h3>🌧Tomorrow</h3>
+          <p>10&deg; /<strong>22&deg;</strong></p>
+        </li>
+        <li>
+          <h3>🌥 Saturday</h3>
+          <p>15&deg; /<strong>17&deg;</strong></p>
+        </li>
+        <li>
+          <h3>☀️ Sunday</h3>
+          <p>25&deg; / <strong>28&deg;</strong></p>
+        </li>
+      </ul>
+    </div>
+    <button>Change city</button>
+    <p>Coded by Yunseon Lee</p>
+    <script>
+      function updateheading(newHeading) {
+        let heading = document.querySelector("h1");
+        heading.innerHTML = newHeading;
+      }
+      function measuretemp(Temperature) {
+        return Temperature >= 0;
+      }
+
+      function createnewHeading() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        if (measuretemp(temperature)) {
+          updateheading(`😀 <br /> Currently ${temperature}&degC in ${city}`);
+        } else {
+          updateheading(`😂 <br /> Currently ${temperature}&degC in ${city}`);
+        }
+      }
+      let applybutton = document.querySelector("button");
+      applybutton.addEventListener("click", createnewHeading);
+    </script>
+  </body>
+</html>
