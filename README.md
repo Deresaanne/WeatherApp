@@ -1,3 +1,3 @@
 # Shecodes
 My first new repository.
-It is very god.
+It is very good.
