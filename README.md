@@ -1,2 +1,2 @@
-# Shecodes
-A web application for displaying weather.
+# Frontend 
+A web application for displaying temperature based on your location.
