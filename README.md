@@ -1,3 +1,2 @@
 # Shecodes
-My first new repository.
-It is very good.
+A web application for displaying weather.
